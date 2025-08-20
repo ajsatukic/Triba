@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8">
+  <title>Triba Igra</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Triba - Najjednostavnija Verzija</h1>
+  <button onclick="novaIgra()">Nova igra</button>
+  <select id="velicinaTable">
+    <option value="4x6">Standardna 4x6</option>
+    <option value="6x8">Standardna 6x8</option>
+    <option value="8x10">Standardna 8x10</option>
+    <option value="custom">Nestandardna</option>
+</select>
+
+  <canvas id="tabla" width="400" height="400"></canvas>
+  <p id="status"></p>
+
+  <script src="triba.js"></script>
+</body>
+</html>
