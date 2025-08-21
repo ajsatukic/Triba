@@ -3,7 +3,6 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; }
 
-/* ==== Background with gradient + stars ==== */
 body {
   font-family: Inter, sans-serif;
   color: #f4edff;
@@ -14,41 +13,6 @@ body {
   text-align: center;
   overflow-x: hidden;
   position: relative;
-}
-
-/* Moving gradient glow */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle, rgba(138,43,226,0.25) 0%, transparent 70%),
-              radial-gradient(circle, rgba(40,224,255,0.25) 0%, transparent 70%);
-  animation: bgMove 12s ease-in-out infinite alternate;
-  z-index: -1;
-}
-@keyframes bgMove {
-  from { transform: translate(-10%, -10%); }
-  to   { transform: translate(10%, 10%); }
-}
-
-/* Stars */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image:
-    radial-gradient(2px 2px at 20% 30%, #fff, transparent),
-    radial-gradient(1.5px 1.5px at 70% 80%, #fff, transparent),
-    radial-gradient(2px 2px at 50% 60%, #fff, transparent),
-    radial-gradient(1.5px 1.5px at 85% 25%, #fff, transparent),
-    radial-gradient(2px 2px at 40% 75%, #fff, transparent);
-  animation: twinkle 6s infinite alternate;
-  z-index: -1;
-  opacity: 0.6;
-}
-@keyframes twinkle {
-  from { opacity: 0.3; }
-  to   { opacity: 0.8; }
 }
 
 /* ==== Welcome screen ==== */
@@ -98,7 +62,7 @@ body::after {
 }
 
 /* ==== Buttons ==== */
-button, .btn-start {
+button, .btn-start, select{
   padding: 12px 26px;
   border-radius: 999px;
   border: 1px solid #8a2be2;
@@ -108,6 +72,8 @@ button, .btn-start {
   cursor: pointer;
   transition: transform .2s, box-shadow .2s;
   box-shadow: 0 0 10px rgba(138,43,226,.4);
+  display: block;
+  margin: 25px auto 0;
 }
 button:hover, .btn-start:hover {
   transform: scale(1.05);
@@ -143,17 +109,8 @@ button:hover, .btn-start:hover {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ==== Select + status ==== */
-select {
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: 1px solid #8a2be2;
-  background: #210a42;
-  color: #fff;
-}
 #status { color: #cfc2ff; }
 
-/* ==== Canvas ==== */
 #board {
   display: block;
   margin: 16px 0;
@@ -175,7 +132,6 @@ select {
   align-self: center;
 }
 
-/* ==== Neon Triangles Background Layer ==== */
 .triangles {
   position: fixed;
   inset: 0;
@@ -184,7 +140,6 @@ select {
   pointer-events: none;
 }
 
-/* Osnovni trougao */
 .triangle {
   position: absolute;
   width: 0;
@@ -197,7 +152,6 @@ select {
   opacity: 0.8;
 }
 
-/* Veće i manje verzije */
 .triangle.small {
   border-left-width: 40px;
   border-right-width: 40px;
@@ -216,7 +170,6 @@ select {
   opacity: 0.9;
 }
 
-/* Različite boje */
 .triangle.blue {
   border-bottom-color: rgba(40, 224, 255, 0.25);
   filter: drop-shadow(0 0 15px #28e0ff);
@@ -230,7 +183,6 @@ select {
   filter: drop-shadow(0 0 15px #8a2be2);
 }
 
-/* Efekat lebdenja */
 @keyframes float {
   from { transform: translateY(0) scale(1); }
   to   { transform: translateY(-30px) scale(1.1); }
@@ -362,11 +314,6 @@ select {
 
 #instructions strong {
   color: #fff;
-}
-
-#instructions button {
-  display: block;
-  margin: 25px auto 0;
 }
 
 /* === About Section === */
