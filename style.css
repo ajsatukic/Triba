@@ -15,7 +15,6 @@ body {
   position: relative;
 }
 
-/* ==== Welcome screen ==== */
 .fullscreen {
   min-height: 100vh;
   display: flex;
@@ -41,7 +40,6 @@ body {
   to   { box-shadow: 0 0 25px #28e0ff; }
 }
 
-/* ==== Title + tagline ==== */
 .title-glam {
   font-family: Orbitron, sans-serif;
   font-size: clamp(40px, 7vw, 90px);
@@ -61,7 +59,6 @@ body {
   color: #cfc2ff;
 }
 
-/* ==== Buttons ==== */
 button, .btn-start, select{
   padding: 12px 26px;
   border-radius: 999px;
@@ -87,7 +84,6 @@ button:hover, .btn-start:hover {
   50% { box-shadow: 0 0 20px #28e0ff; }
 }
 
-/* ==== Sections ==== */
 .section {
   max-width: 900px;
   margin: 50px auto;
@@ -113,12 +109,14 @@ button:hover, .btn-start:hover {
 
 #board {
   display: block;
-  margin: 16px 0;
+  margin: 16px auto;
   width: min(100%, 800px);
+  height: 500px;
   background: #14052a;
-  border: 1px solid rgba(255,255,255,.2);
+  border: 6px solid #ff1493; 
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(138,43,226,.3) inset;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .menu-buttons {
@@ -198,7 +196,7 @@ button:hover, .btn-start:hover {
 }
 
 .dot.selected {
-    background-color: blue; /* označena tačka */
+    background-color: blue;
 }
 
 .line {
@@ -208,7 +206,6 @@ button:hover, .btn-start:hover {
     transform-origin: 0 50%;
 }
 
-/* === Popup overlay === */
 .popup {
   position: fixed;
   inset: 0;
@@ -220,7 +217,7 @@ button:hover, .btn-start:hover {
 }
 .popup.hidden { display: none; }
 
-/* === Popup box === */
+
 .popup-content {
   background: #14052a;
   border: 2px solid #8a2be2;
@@ -264,7 +261,6 @@ button:hover, .btn-start:hover {
   to   { transform: scale(1); opacity: 1; }
 }
 
-/* === Instructions Section Styling === */
 #instructions h2 {
   text-align: center;
   font-family: Orbitron, sans-serif;
@@ -298,17 +294,14 @@ button:hover, .btn-start:hover {
 #instructions h3:nth-of-type(6) { color: #ffd700; text-shadow: 0 0 10px #ffd700; }
 #instructions h3:nth-of-type(7) { color: #8a2be2; text-shadow: 0 0 10px #28e0ff; }
 
-#instructions p, 
-#instructions ul, 
-#instructions ol {
+#instructions p, #instructions ul, #instructions ol {
   color: #ddd;
   margin-left: 15px;
   margin-bottom: 12px;
   line-height: 1.6;
 }
 
-#instructions ul li, 
-#instructions ol li {
+#instructions ul li, #instructions ol li {
   margin-bottom: 6px;
 }
 
@@ -316,7 +309,6 @@ button:hover, .btn-start:hover {
   color: #fff;
 }
 
-/* === About Section === */
 #about h2 {
   text-align: center;
   font-family: Orbitron, sans-serif;
