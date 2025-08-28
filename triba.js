@@ -11,7 +11,7 @@ let m = 0, n = 0;
 let moves = 0;
 let dyn = false;
 
-// za dynamic
+//za dynamic
 let nextAt = null;
 const stepMin = 2, stepMax = 5;
 const rmMin = 1, rmMax = 3;
